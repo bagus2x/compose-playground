@@ -1,7 +1,6 @@
 package bagus2x.composeplayground.screen.animation
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
