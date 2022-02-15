@@ -20,7 +20,8 @@ fun HomeScreen() {
     val navController = LocalNavController.current
     val indexes = rememberSaveable {
         listOf(
-            MainRoutes.ANIMATION
+            MainRoutes.ANIMATION,
+            MainRoutes.FOUNDATION
         )
     }
 

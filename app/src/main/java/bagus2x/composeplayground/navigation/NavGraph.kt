@@ -9,11 +9,16 @@ import bagus2x.composeplayground.screen.animation.AnimationScreen
 import bagus2x.composeplayground.screen.animation.CrossFadeScreen
 import bagus2x.composeplayground.screen.animation.GestureScreen
 import bagus2x.composeplayground.screen.animation.MultipleValueChangeScreen
+import bagus2x.composeplayground.screen.foundation.CanvasScreen
+import bagus2x.composeplayground.screen.foundation.FoundationScreen
+import bagus2x.composeplayground.screen.foundation.ShapeScreen
+import bagus2x.composeplayground.screen.foundation.TransformGestureScreen
 import bagus2x.composeplayground.screen.home.HomeScreen
 
 object MainRoutes {
     const val MAIN = "home"
     const val ANIMATION = "animation"
+    const val FOUNDATION = "foundation"
 }
 
 object AnimationRoutes {
@@ -22,12 +27,21 @@ object AnimationRoutes {
     const val GESTURE = "gesture_animation"
 }
 
+object FoundationRoutes {
+    const val CANVAS = "canvas"
+    const val SHAPE = "shape"
+    const val TRANSFORM_GESTURE = "transform_gesture"
+}
+
 fun NavGraphBuilder.mainRoutes() {
     composable(MainRoutes.MAIN) {
         HomeScreen()
     }
     composable(MainRoutes.ANIMATION) {
         AnimationScreen()
+    }
+    composable(MainRoutes.FOUNDATION) {
+        FoundationScreen()
     }
 }
 
@@ -43,6 +57,18 @@ fun NavGraphBuilder.animationRoutes() {
     }
 }
 
+fun NavGraphBuilder.foundationRoutes() {
+    composable(FoundationRoutes.CANVAS) {
+        CanvasScreen()
+    }
+    composable(FoundationRoutes.SHAPE) {
+        ShapeScreen()
+    }
+    composable(FoundationRoutes.TRANSFORM_GESTURE) {
+        TransformGestureScreen()
+    }
+}
+
 @Composable
 fun NavGraph() {
     NavHost(
@@ -51,5 +77,6 @@ fun NavGraph() {
     ) {
         mainRoutes()
         animationRoutes()
+        foundationRoutes()
     }
 }
