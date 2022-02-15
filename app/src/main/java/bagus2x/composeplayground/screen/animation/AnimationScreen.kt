@@ -12,7 +12,8 @@ fun AnimationScreen() {
         routes = rememberSaveable {
             listOf(
                 AnimationRoutes.CROSS_FADE,
-                AnimationRoutes.MULTIPLE_VALUE_CHANGE
+                AnimationRoutes.MULTIPLE_VALUE_CHANGE,
+                AnimationRoutes.GESTURE
             )
         }
     )
